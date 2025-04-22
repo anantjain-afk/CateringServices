@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from 'next/link'
+import { Button } from "@/components/ui/button";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,18 +22,30 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <nav>
-          <div className="bg-black text-white p-4 flex gap-10">
-
+          <div className="bg-black text-white p-4 flex text-sm justify-around  items-center" >
+              <h2 className="font-extrabold text-2xl font-serif">BiteBuzz</h2>
+              <div className="flex gap-10 items-center">
+              <div className="flex gap-10">
               <Link href='/'>Home</Link>
               <Link href='/Services'>Services</Link>
               <Link href='/About'>About</Link>
 
+              </div>
+              <div  className="flex gap-5">
+                <Button className='bg-orange-400 font-semibold'>Login</Button>
+                <Button className='bg-orange-400 font-semibold'>Register</Button>
+              </div>
+              </div>   
           </div>
         </nav>
         {children}
+        <footer>
+          <div>
+
+          </div>
+        </footer>
       </body>
     </html>
   );
