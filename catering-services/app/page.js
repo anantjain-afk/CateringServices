@@ -1,7 +1,13 @@
 import Image from "next/image";
+import Landing from "./components/landing";
 
 export default function Home() {
   return (
-    <div >This is Home Page</div>
+    <>
+      <div className="h-[100vh]">
+      <Landing />
+      </div>
+      
+    </>
   );
 }
