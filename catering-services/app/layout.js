@@ -24,26 +24,52 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <nav>
-          <div className="bg-black text-white p-4 flex text-sm justify-around  items-center" >
-              <h2 className="font-extrabold text-2xl font-serif">BiteBuzz</h2>
+          <div className="bg-yellow-400 text-black p-4 flex text-sm justify-around  items-center" >
+              <Link href = '/'className="font-extrabold text-2xl font-serif">BiteBuzz</Link>
               <div className="flex gap-10 items-center">
-              <div className="flex gap-10">
-              <Link href='/'>Home</Link>
-              <Link href='/Services'>Services</Link>
-              <Link href='/About'>About</Link>
-
+              <div className="flex gap-10 ">
+              <Link href='/'   className="hover:text-cyan-800">Home</Link>
+              <Link href='/Services'  className="hover:text-cyan-800">Services</Link>
+              <Link href='/About' className="hover:text-cyan-800">About</Link>
+              <Link href = '/ContactUs' className="hover:text-cyan-800">Contact Us</Link>
               </div>
-              <div  className="flex gap-5">
-                <Button className='bg-orange-400 font-semibold'>Login</Button>
-                <Button className='bg-orange-400 font-semibold'>Register</Button>
+              <div className=" text-lg">|</div>
+              <div  className="flex gap-5  text-white  ">
+                <Button className='bg-orange-500 font-semibold text-sm hover:bg-orange-600'>Login</Button>
+                <Button className='bg-orange-500 font-semibold text-sm hover:bg-orange-600'>Register</Button>
               </div>
               </div>   
           </div>
         </nav>
         {children}
-        <footer>
-          <div>
+        <footer >
+          <div className=" bg-cyan-900 text-white w-full h-60 flex gap-9 ">
 
+          <div className="font-light text-2xl p-9 w-[60%]">BiteBuzz is your go-to partner for unforgettable catering experiences—
+            <span className="font-bold text-amber-500">flavorful, fresh, and fuss-free.</span></div>
+
+            <div className="flex flex-col py-9 ">
+              <p className="font-bold ">Quick Links</p>
+              <Link href='/'   className="hover:text-orange-600">Home</Link>
+              <Link href='/Services'  className="hover:text-orange-600">Services</Link>
+              <Link href='/About' className="hover:text-orange-600">About</Link>
+              <Link href = '/ContactUs' className="hover:text-orange-600">Contact Us</Link>
+            </div>
+            <div className="flex flex-col py-9 ">
+              <p className="font-bold">Contact Info</p>
+              <p>📍 Location: Sonepat, Haryana</p>
+              <p>📞 Phone: +91-XXXXXXXXXX</p>
+              <p>📧 Email: contact@bitebuzz.com</p>
+            </div>
+            <div className="flex flex-col py-9 ">
+              <p className="font-bold">Follow Us</p>
+              <p>Instagram</p>
+            </div>
+
+
+
+          
+              
           </div>
         </footer>
       </body>
