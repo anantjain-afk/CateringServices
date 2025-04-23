@@ -35,8 +35,12 @@ export default function RootLayout({ children }) {
               </div>
               <div className=" text-lg">|</div>
               <div  className="flex gap-5  text-white  ">
-                <Button className='bg-orange-500 font-semibold text-sm hover:bg-orange-600'>Login</Button>
-                <Button className='bg-orange-500 font-semibold text-sm hover:bg-orange-600'>Register</Button>
+              <Link href="/sign-up">
+  <Button className="bg-orange-500 font-semibold text-sm hover:bg-orange-600">Register</Button>
+</Link>
+                <Link href="/login">
+  <Button className="bg-orange-500 font-semibold text-sm hover:bg-orange-600">Login</Button>
+</Link>
               </div>
               </div>   
           </div>
