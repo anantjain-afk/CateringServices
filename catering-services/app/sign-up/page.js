@@ -41,7 +41,7 @@ export default function SignUp() {
         await updateProfile(userCredential.user, {
           displayName: username
         });
-        route.push('/login');
+        route.push('/');
       }
     } catch (err) {
       console.error("Firebase Error:", err.message);
@@ -61,7 +61,7 @@ export default function SignUp() {
   return (
     <>
       <div className="h-[100vh] flex justify-center items-center bg-gray-100">
-          <div className="h-[60vh] w-[50vh] shadow-2xl rounded-2xl bg-yellow-400 flex   flex-col justify-start pt-[4%] gap-6 items-center">
+          <div className="h-[60vh] w-[50vh] shadow-2xl rounded-2xl bg-white text-black  flex   flex-col justify-start pt-[4%] gap-6 items-center">
             <div className="w-[80%] flex flex-col gap-2">
               <Label>Username</Label>
               <Input className="border-black  "
@@ -96,7 +96,7 @@ export default function SignUp() {
               {error.password && <p className="text-red-500 text-sm">{error.password}</p>}
             </div>
             <div className="flex gap-2 " >
-            <Button variant="outline" onClick = {(e)=>handleSubmit(e)}>Register</Button>
+            <Button className="bg-orange-500 font-semibold text-sm hover:bg-orange-600" onClick = {(e)=>handleSubmit(e)}>Register</Button>
             </div>
             <div className="mt-6">
               <span className="text-gray-600">Already have an account ? </span>
