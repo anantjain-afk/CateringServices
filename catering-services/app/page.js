@@ -1,11 +1,15 @@
 import Image from "next/image";
 import SearchCaters from "./components/landing";
 
+import CarouselItems from "./components/carousel2";
 export default function Home() {
   return (
     <>
-      <div className="h-[100vh]">
+      <div >
       <SearchCaters />
+      <br/>
+
+      <CarouselItems/>
       </div>
       
     </>

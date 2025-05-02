@@ -10,7 +10,7 @@ function Landing() {
           alt="food Image"
           className="w-full h-[70vh] object-cover  "
         />
-        <div className="absolute  w-[80%] h-[65%] bg-amber-800/70 rounded-4xl flex justify-center items-center">
+        <div className="absolute  w-[80%] h-[65%] bg-amber-800/80 rounded-4xl flex justify-center items-center">
           <div className=" h-[80%] w-[90%]  flex justify-around items-center">
             <div className=" h-[80%] flex flex-col gap-16 justify-around font-">
               <div>
@@ -35,7 +35,7 @@ function Landing() {
               </div>
             </div>
 
-            <div className=" h-[80%] text-white font-light text-2xl gap-y-4 flex flex-col justify-center">
+            <div className=" h-[80%] text-white font-medium text-2xl gap-y-4 flex flex-col justify-center">
               <p>Over 100,000 restaurants</p>
               <p>Any group size, dietary need, or budget</p>
               <p>Delivered on time, as ordered</p>
