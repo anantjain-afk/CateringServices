@@ -55,7 +55,7 @@ export default function Login() {
 
   return (
     <>
-      <div className="h-[100vh] flex justify-center items-center bg-gray-100">
+      <div className="h-[100vh] flex justify-center items-center bg-gradient-to-r from-yellow-100 via-purple-100">
           <div className="h-[50vh] w-[50vh] shadow-2xl rounded-2xl bg-white flex   flex-col justify-start pt-[4%] gap-6 items-center">
             
             <div className="w-[80%] flex flex-col gap-2">

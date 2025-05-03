@@ -21,7 +21,10 @@ function Contact() {
         <div className="bg-white/40 h-[90%] border-2 border-white w-[80%] grid grid-rows-[5%_80%_15%] rounded-3xl  p-7 ">
           <div className="text-2xl font-bold  ">Let's Get in Touch</div>
           <div className="flex flex-col justify-center  gap-6">
-          <input type="text" className="bg-white shadow-lg rounded-sm h-[15%] pl-[10%]" placeholder="Enter Name"/> 
+
+          <input type="text" className="bg-white shadow-lg rounded-sm h-[15%] pl-[10%]" placeholder="Enter Name"
+            
+          /> 
           <input type="email" className="bg-white  shadow-lg rounded-sm h-[15%] pl-[10%]" placeholder="Enter Email"/>
           <input type='message' className="bg-white shadow-lg rounded-sm h-[45%] pl-[10%] "placeholder="Enter Message"  />
           </div>
