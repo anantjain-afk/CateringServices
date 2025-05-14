@@ -1,7 +1,13 @@
-import React from "react";
+"use client";
+import { useRef, useState, React } from "react";
 import { Input } from "@/components/ui/input";
-
+import cityToLocation from "./searchLogic";
 function Landing() {
+  const inputRef = useRef();
+  function handleClick() {
+    const city = inputRef.current.value;     
+    cityToLocation(city.trim());
+  }
   return (
     <>
       <div className="h-[70vh] relative flex  items-center justify-center">
@@ -22,14 +28,26 @@ function Landing() {
                 </h1>
               </div>
               <div className="flex  relative">
-                <img src="/location.svg" alt="location" className="absolute left-4 top-1/2 transform -translate-y-1/2 h-6 w-6"/>
+                <img
+                  src="/location.svg"
+                  alt="location"
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 h-6 w-6"
+                />
                 <input
+                  ref={inputRef}
                   type="text"
                   className="h-12 w-[70%]  rounded-l-[3px] rounded-r-none bg-white pl-12 text-lg "
-                  placeholder="Entry your delivery location"
+                  placeholder="Enter your delivery location"
                 />
-                <img src="/target.png" alt="target" className="absolute top-1/2 transform -translate-y-1/2  left-93 w-8 h-8"/>
-                <button className="w-[30%] bg-red-400 rounded-r-[3px] rounded-l-none text-white font-bold font-mono">
+                <img
+                  src="/target.png"
+                  alt="target"
+                  className="absolute top-1/2 transform -translate-y-1/2  left-93 w-8 h-8"
+                />
+                <button
+                  className="w-[30%] bg-red-400 rounded-r-[3px] rounded-l-none text-white font-bold font-mono"
+                  onClick={() => handleClick()}
+                >
                   Search
                 </button>
               </div>
