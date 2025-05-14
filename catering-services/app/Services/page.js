@@ -19,7 +19,7 @@ export default function Services(){
             {/* array.map */}
             {Object.keys(serviceIntro).map((intro,index)=>{
                if (index%2 == 0 ){
-                  return <div className=" grid grid-cols-[45%_55%] gap-5 min-h-[40vh] p-5 ">
+                  return <div className=" grid grid-cols-[45%_55%] gap-5 min-h-[40vh] p-5 rounded-lgda">
                   <div className=" h-full  flex justify-center items-center ">
                      <div className="h-[90%] w-[90%]  rounded-2xl    shadow-xl">
                         <img src={images[index]} alt={images[index]} className="w-full h-full object-cover rounded-2xl shadow-xl"/>
@@ -28,14 +28,14 @@ export default function Services(){
                   </div>
                   <div className=" h-full p-5 flex flex-col gap-3">
                      <div className="text-3xl  font-serif font-bold text-orange-400">{intro}</div>
-                     <div className="text-gray-600 font-light">{serviceIntro[intro]}</div>
+                     <div className="text-white font-light">{serviceIntro[intro]}</div>
                      <div>
                         {Object.keys(serviceData[index]).map((feature , i)=>{
                            return <div className="flex gap-2">
                            <div className="mt-1 mr-3 text-orange-600"><Check className="h-5 w-5" /></div>
                            <div className="">
-                              <div className="font-bold ">{feature}</div>
-                              <div className="text-gray-600 mb-5 ">{serviceData[index][feature]}</div>
+                              <div className="font-bold text-yellow-400">{feature}</div>
+                              <div className="text-gray-200 mb-5 ">{serviceData[index][feature]}</div>
                            </div>
                         </div>
                         })}
@@ -48,19 +48,19 @@ export default function Services(){
                   
                </div>
                }else{
-                     return <div className=" grid grid-cols-[55%_45%] gap-5 min-h-[40vh] p-5 ">
+                     return <div className=" grid grid-cols-[55%_45%] gap-5 min-h-[40vh] rounded-lg bg-[#197278] p-5 ">
                
                      <div className=" h-full p-5 flex flex-col gap-3 ml-2">
                         <div className="text-3xl font-serif font-bold text-orange-400">{intro}</div>
-                        <div className="text-gray-600 font-light">{serviceIntro[intro]}</div>
+                        <div className="text-white font-light">{serviceIntro[intro]}</div>
                         <div>
                            {/* arr.map */}
                            {Object.keys(serviceData[index]).map((feature , i)=>{
                            return <div className="flex gap-2 ">
                            <div className="mt-1 mr-3 text-orange-600"><Check className="h-5 w-5" /></div>
                            <div>
-                              <div className="font-bold ">{feature}</div>
-                              <div className="text-gray-600 mb-5">{serviceData[index][feature]}</div>
+                              <div className="font-bold text-yellow-400">{feature}</div>
+                              <div className="text-gray-200 mb-5">{serviceData[index][feature]}</div>
                            </div>
                         </div>
                         })}
