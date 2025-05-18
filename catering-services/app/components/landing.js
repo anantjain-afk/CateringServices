@@ -1,12 +1,18 @@
 "use client";
 import { useRef, useState, React } from "react";
 import { Input } from "@/components/ui/input";
-import cityToLocation from "./searchLogic";
+import { useRouter } from "next/navigation";
+
 function Landing() {
   const inputRef = useRef();
-  function handleClick() {
+  const router = useRouter();
+  async function handleClick() {
     const city = inputRef.current.value;     
-    cityToLocation(city.trim());
+    if(!city) return 
+    
+    router.push(`/${city.toLowerCase()}`)
+    
+
   }
   return (
     <>
