@@ -6,13 +6,12 @@ import { useRouter } from "next/navigation";
 function Landing() {
   const inputRef = useRef();
   const router = useRouter();
+  const [loading , setLoading ] = useState(false)
   async function handleClick() {
     const city = inputRef.current.value;     
     if(!city) return 
-    
+    setLoading(true)
     router.push(`/${city.toLowerCase()}`)
-    
-
   }
   return (
     <>
@@ -42,7 +41,7 @@ function Landing() {
                 <input
                   ref={inputRef}
                   type="text"
-                  className="h-12 w-[70%]  rounded-l-[3px] rounded-r-none bg-white pl-12 text-lg "
+                  className="h-12 w-[70%]  rounded-l-[3px] rounded-r-none bg-white pl-12 text-lg focus:outline-none focus:ring-0 focus:shadow-none"
                   placeholder="Enter your delivery location"
                 />
                 <img
@@ -51,10 +50,12 @@ function Landing() {
                   className="absolute top-1/2 transform -translate-y-1/2  left-93 w-8 h-8"
                 />
                 <button
-                  className="w-[30%] bg-red-400 rounded-r-[3px] rounded-l-none text-white font-bold font-mono"
-                  onClick={() => handleClick()}
+                                    className={`w-[30%] bg-red-400 rounded-r-[3px] rounded-l-none text-white font-bold font-mono ${loading ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                  disabled={loading}
+                  
+                  onClick={() => handleClick() }
                 >
-                  Search
+                  {loading ? 'Loading...' : 'Search'}
                 </button>
               </div>
             </div>
