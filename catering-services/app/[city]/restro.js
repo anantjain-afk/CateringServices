@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Restro({restro , rating , cuisine , randomImage}) {
+function Restro({restro , rating , cuisine , randomImage }) {
   return (
-    <div className="  w-[25%] h-[30vh]  rounded-2xl grid grid-rows-[80%_20%] mb-4">
+    <div className="  w-[25%] h-[30vh]  rounded-2xl grid grid-rows-[80%_20%] mb-4" >
                 <div>
                   <img
                     src={randomImage}
