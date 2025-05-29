@@ -41,7 +41,7 @@ const testimonials = [
     }
   ];
 function Testimonial() {
-  const [hasMounted, setHasMounted] = React.useState(false);
+  const [hasMounted, setHasMounted] = React.useState(false);  
   React.useEffect(() => {
     setHasMounted(true);
   }, []);

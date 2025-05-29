@@ -40,7 +40,7 @@ export default async function cityToLocation(city){
       });
     const overpassData = await overpassRes.json();
     const elements = overpassData.elements;
-    return elements.slice(0,15)
+    return elements.slice(0,30)
 
     
     

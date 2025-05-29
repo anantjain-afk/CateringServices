@@ -14,7 +14,7 @@ export default function Services(){
                            
             <div className="font-extrabold text-5xl text-red-500 ">Services</div>
          </div>
-         <div className="p-8  flex flex-col gap-7 bg-[#2E2E2E]">
+         <div className="p-8  flex flex-col gap-7 bg-gray-300">
                {/* If condition lagegi for lefft or right alternate */}
             {/* array.map */}
             {Object.keys(serviceIntro).map((intro,index)=>{
@@ -24,7 +24,7 @@ export default function Services(){
                      <div className="h-[90%] w-[90%]  rounded-2xl    shadow-xl">
                         <img src={images[index]} alt={images[index]} className="w-full h-full object-cover rounded-2xl shadow-xl"/>
                      </div>
-   
+
                   </div>
                   <div className=" h-full p-5 flex flex-col gap-3">
                      <div className="text-3xl  font-serif font-bold text-yellow-400">{intro}</div>
