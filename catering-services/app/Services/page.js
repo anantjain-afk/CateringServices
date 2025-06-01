@@ -14,12 +14,12 @@ export default function Services(){
                            
             <div className="font-extrabold text-5xl text-red-500 ">Services</div>
          </div>
-         <div className="p-8  flex flex-col gap-7 bg-gray-300">
+         <div className="p-8  flex flex-col gap-7 bg-gray-100">
                {/* If condition lagegi for lefft or right alternate */}
             {/* array.map */}
             {Object.keys(serviceIntro).map((intro,index)=>{
                if (index%2 == 0 ){
-                  return <div className=" grid grid-cols-[45%_55%] gap-5 min-h-[40vh] p-5 rounded-lg bg-[#B5838D]">
+                  return <div className=" grid grid-cols-[45%_55%] gap-5 min-h-[40vh] p-5 rounded-lg bg-[#197278] shadow-xl">
                   <div className=" h-full  flex justify-center items-center ">
                      <div className="h-[90%] w-[90%]  rounded-2xl    shadow-xl">
                         <img src={images[index]} alt={images[index]} className="w-full h-full object-cover rounded-2xl shadow-xl"/>
@@ -35,7 +35,7 @@ export default function Services(){
                            <div className="mt-1 mr-3 text-black"><Check className="h-5 w-5" /></div>
                            <div className="">
                               <div className="font-bold text-yellow-400">{feature}</div>
-                              <div className="text-gray-200 mb-5 ">{serviceData[index][feature]}</div>
+                              <div className="text-gray-300 mb-5 ">{serviceData[index][feature]}</div>
                            </div>
                         </div>
                         })}
