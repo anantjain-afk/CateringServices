@@ -1,4 +1,3 @@
-
 import React from "react";
 
 import cityToLocation from "../components/searchLogic";
@@ -10,7 +9,7 @@ async function city({ params }) {
   const data = await cityToLocation(city.trim());
   
   
-  return (
+  return data && (
     <>
         <Pagination data={data}/>
     </>

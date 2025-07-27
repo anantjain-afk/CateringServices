@@ -16,7 +16,7 @@ export default async function cityToLocation(city){
                 throw new Error(`HTTP error! Status: ${res.status}`)
             }
             const data = await res.json()
-            return data[0].boundingbox ; 
+            return data[0].boundingbox; 
         }
         catch(error){
             console.error("Error fetching location data:", error.message) ;
@@ -40,7 +40,7 @@ export default async function cityToLocation(city){
       });
     const overpassData = await overpassRes.json();
     const elements = overpassData.elements;
-    return elements.slice(0,30)
+    return elements[0]?elements.slice(0,30):elements
 
     
     
