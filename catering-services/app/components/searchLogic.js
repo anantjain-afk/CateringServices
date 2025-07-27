@@ -8,6 +8,7 @@
 // here i will use the logic for nomintin api 
 
 export default async function cityToLocation(city){
+  try{
     const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(city)}&countrycodes=in`
     async function  fetchLocation(){
         try{
@@ -16,7 +17,7 @@ export default async function cityToLocation(city){
                 throw new Error(`HTTP error! Status: ${res.status}`)
             }
             const data = await res.json()
-            return data[0].boundingbox; 
+            return data?.[0].boundingbox; 
         }
         catch(error){
             console.error("Error fetching location data:", error.message) ;
@@ -24,7 +25,7 @@ export default async function cityToLocation(city){
         }
     }
     const location  = await fetchLocation();
-    const south = location[0], north = location[1], west = location[2], east = location[3]; 
+    const south = location?.[0], north = location[1], west = location[2], east = location[3]; 
     const overpassQuery = `
       [out:json][timeout:10];
       (
@@ -40,9 +41,12 @@ export default async function cityToLocation(city){
       });
     const overpassData = await overpassRes.json();
     const elements = overpassData.elements;
-    return elements[0]?elements.slice(0,30):elements
+    return elements?.[0]?elements.slice(0,30):elements
 
-    
+  }
+  catch{
+    return []
+  }
     
 
 }
