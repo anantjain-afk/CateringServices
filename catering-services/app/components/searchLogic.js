@@ -12,7 +12,10 @@ export default async function cityToLocation(city){
     const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(city)}&countrycodes=in`
     async function  fetchLocation(){
         try{
-            const res = await fetch(url)
+            const res = await fetch(url,{headers:{
+              "Accept": "*/*",
+              "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+              }})
             console.log(res)
             if(!res.ok){
                 throw new Error(`HTTP error! Status: ${res.status}`)
