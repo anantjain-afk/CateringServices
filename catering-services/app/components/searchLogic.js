@@ -13,10 +13,10 @@ export default async function cityToLocation(city){
     async function  fetchLocation(){
         try{
             const res = await fetch(url)
+            console.log(res)
             if(!res.ok){
                 throw new Error(`HTTP error! Status: ${res.status}`)
             }
-            console.log(res)
             const data = await res.json()
             return data?.[0].boundingbox; 
         }
