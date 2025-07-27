@@ -40,7 +40,11 @@ export default function Login() {
       router.push('/');
     } catch (err) {
       console.error("Login Error:", err.message);
-      setErrors(prev => ({ ...prev, firebase: err.message }));
+      let customMessage = err.message;
+      if (err.code === 'auth/user-not-found' || err.code === 'auth/invalid-credential') {
+        customMessage = "No account found with this email. Please register first.";
+      }
+      setErrors(prev => ({ ...prev, firebase: customMessage }));
     }
   }
 
@@ -52,43 +56,61 @@ export default function Login() {
     else if (name === "password") setPassword(value);
   }
 
+  function handleKeyDown(e) {
+    if (e.key === "Enter") {
+      handleSubmit(e);
+    }
+  }
 
   return (
     <>
       <div className="h-[100vh] flex justify-center items-center bg-gradient-to-r from-yellow-100 via-purple-100">
-          <div className="h-[50vh] w-[50vh] shadow-2xl rounded-2xl bg-white flex   flex-col justify-start pt-[4%] gap-6 items-center">
+          <div className="h-[50vh] w-[50vh] shadow-2xl rounded-2xl bg-white flex flex-col justify-start pt-[4%] gap-6 items-center">
           
             <div className="w-[80%] flex flex-col gap-2">
               <Label>Email</Label>
-              <Input className="border-black"
-                name = 'email'
-                type= 'email'
-                value = {email}
-                onChange = {(e)=>handleChange(e)}
+              <Input
+                className="border-black"
+                name="email"
+                type="email"
+                value={email}
+                onChange={(e) => handleChange(e)}
+                onKeyDown={(e) => handleKeyDown(e)} // Trigger on Enter key
                 required
               />
               {error.email && <p className="text-red-500 text-sm">{error.email}</p>}
             </div>
             <div className="w-[80%] flex flex-col gap-2">
               <Label>Password</Label>
-              <Input className="border-black"
-                name = 'password'
-                type= 'password'
-                value = {password}
-                onChange = {(e)=>handleChange(e)}
+              <Input
+                className="border-black"
+                name="password"
+                type="password"
+                value={password}
+                onChange={(e) => handleChange(e)}
+                onKeyDown={(e) => handleKeyDown(e)} // Trigger on Enter key
                 required
               />
               {error.password && <p className="text-red-500 text-sm">{error.password}</p>}
             </div>
-            <div className="flex gap-2 " >
-
-            <Button className="bg-orange-500 font-semibold text-sm hover:bg-orange-600" onClick = {(e)=>handleSubmit(e)}>Login</Button>
-
+            <div className="flex gap-2">
+              <Button
+                className="bg-orange-500 font-semibold text-sm hover:bg-orange-600"
+                onClick={(e) => handleSubmit(e)}
+              >
+                Login
+              </Button>
             </div>
             {error.firebase && <p className="text-red-500 text-sm">{error.firebase}</p>}
             <div className="mt-6">
-              <span className="text-gray-600">Don't have an account ? </span>
-              <Button variant="ghost" className="text-gray-800" onClick={() => router.push('/sign-up')}>Register Here</Button>
+              <span className="text-gray-600">Don't have an account? </span>
+              <Button
+                variant="ghost"
+                className="text-gray-800"
+                onClick={() => router.push('/sign-up')}
+              >
+                Register Here
+              </Button>
             </div>
           </div>
       </div>

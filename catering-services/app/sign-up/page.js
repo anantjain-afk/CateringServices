@@ -16,7 +16,21 @@ export default function SignUp() {
   const [submited , setSubmitted] = useState(false)
   const [error , setErrors] = useState({})
   const route = useRouter() ;
-  const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
+  const [createUserWithEmailAndPassword, , , hookError] = useCreateUserWithEmailAndPassword(auth);
+
+  useEffect(() => {
+    if (hookError) {
+      let customMessage = hookError.message;
+      if (hookError.code === 'auth/email-already-in-use' || hookError.message?.includes('EMAIL_EXISTS')) {
+        customMessage = "This email is already registered. Please log in or use another email.";
+      } else if (hookError.code === 'auth/invalid-email') {
+        customMessage = "The email address is badly formatted.";
+      } else if (hookError.code === 'auth/weak-password') {
+        customMessage = "Password should be at least 6 characters.";
+      }
+      setErrors(prev => ({ ...prev, firebase: customMessage }));
+    }
+  }, [hookError]);
 
 
   const validate = () => {
@@ -44,8 +58,16 @@ export default function SignUp() {
         route.push('/');
       }
     } catch (err) {
-      console.error("Firebase Error:", err.message);
-      setErrors(prev => ({ ...prev, firebase: err.message }));
+      console.error("Firebase Error:", err.message, err.code);
+      let customMessage = err.message;
+      if (err.code === 'auth/email-already-in-use') {
+        customMessage = "This email is already registered. Please log in or use another email.";
+      } else if (err.code === 'auth/invalid-email') {
+        customMessage = "The email address is badly formatted.";
+      } else if (err.code === 'auth/weak-password') {
+        customMessage = "Password should be at least 6 characters.";
+      }
+      setErrors(prev => ({ ...prev, firebase: customMessage }));
     }
   };
 

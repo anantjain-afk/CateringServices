@@ -91,7 +91,7 @@ export default function CarouselItems() {
               <div className="p-6 space-y-3">
                 <h2 className="text-2xl font-semibold">{item.title}</h2>
                 <p className="text-base">{item.description}</p>
-                <Link href={item.link}>
+                <Link href='/Services'>
                   <button className="px-4 py-2 bg-yellow-400 text-[#333333] rounded-lg hover:bg-[#A8B5A2] transition-colors duration-200">
                     Learn More
                   </button>
