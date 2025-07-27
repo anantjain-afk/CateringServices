@@ -44,7 +44,8 @@ export default async function cityToLocation(city){
     return elements?.[0]?elements.slice(0,30):elements
 
   }
-  catch{
+  catch(err){
+    console.log(err)
     return []
   }
     
