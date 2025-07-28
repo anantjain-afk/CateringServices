@@ -52,6 +52,4 @@ export default async function cityToLocation(city){
     console.log(err)
     return []
   }
-    
-
 }

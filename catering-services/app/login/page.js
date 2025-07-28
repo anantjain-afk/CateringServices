@@ -75,7 +75,7 @@ export default function Login() {
                 type="email"
                 value={email}
                 onChange={(e) => handleChange(e)}
-                onKeyDown={(e) => handleKeyDown(e)} // Trigger on Enter key
+                onKeyDown={(e) => handleKeyDown(e)}
                 required
               />
               {error.email && <p className="text-red-500 text-sm">{error.email}</p>}
@@ -88,7 +88,7 @@ export default function Login() {
                 type="password"
                 value={password}
                 onChange={(e) => handleChange(e)}
-                onKeyDown={(e) => handleKeyDown(e)} // Trigger on Enter key
+                onKeyDown={(e) => handleKeyDown(e)} 
                 required
               />
               {error.password && <p className="text-red-500 text-sm">{error.password}</p>}

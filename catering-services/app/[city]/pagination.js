@@ -15,7 +15,6 @@ const cuisineCategories = [
   "Rajasthani",
 ];
 
-// Move generateCuisineTags outside Pagination and avoid mutating cuisineCategories
 function generateCuisineTags() {
   const cuisineCategoriesCopy = [...cuisineCategories];
   const numTags = Math.floor(Math.random() * 3) + 2;
@@ -24,16 +23,14 @@ function generateCuisineTags() {
 }
 
 function Pagination({ data }) {
-  const [currentPage, setCurrentPage] = useState(1); // Track current page
+  const [currentPage, setCurrentPage] = useState(1);
   const [selectedCuisine, setSelectedCuisine] = useState("");
-  const restaurantsPerPage = 6; // Restaurants shown per page
-
+  const restaurantsPerPage = 6;
 
   const getRandomRating = () => {
     return Math.round((Math.random() * 4 + 1) * 10) / 10;
   };
 
-  // Enrich data with cuisineTags, randomImage, and randomRating just once when data changes
   const enrichedData = useMemo(() => {
     const totalImages = 35;
     const imageIndices = Array.from({ length: data.length }, (_, i) => (i % totalImages) + 1);
@@ -55,14 +52,14 @@ function Pagination({ data }) {
       )
     : enrichedData;
 
-  const indexOfLastRestaurant = currentPage * restaurantsPerPage; // Last item index
-  const indexOfFirstRestaurant = indexOfLastRestaurant - restaurantsPerPage; // First item index
+  const indexOfLastRestaurant = currentPage * restaurantsPerPage;
+  const indexOfFirstRestaurant = indexOfLastRestaurant - restaurantsPerPage;
   const currentRestaurants = filteredData.slice(
     indexOfFirstRestaurant,
     indexOfLastRestaurant
-  ); // Slice for current page
+  );
 
-  const totalPages = Math.ceil(filteredData.length / restaurantsPerPage); // Total number of pages
+  const totalPages = Math.ceil(filteredData.length / restaurantsPerPage);
 
   return (
     <>
@@ -93,7 +90,7 @@ function Pagination({ data }) {
           </button>
         </div>
         <div className=" w-full flex flex-wrap  p-5 gap-10 justify-center">
-          {currentRestaurants.map((restro, index) => {
+          {currentRestaurants.length >0 ? currentRestaurants.map((restro, index) => {
             const randomImage = restro.randomImage;
             const rating = restro.randomRating;
             const cuisineArray = restro.cuisineTags;
@@ -109,7 +106,7 @@ function Pagination({ data }) {
                 />
               </>
             );
-          })}
+          }) : <div className="w-full text-center text-gray-500">Sorry, we couldn't find any restaurants matching your search.</div>}
         </div>
         <div className="w-full flex justify-center mt-4 gap-4 mb-8">
           <button

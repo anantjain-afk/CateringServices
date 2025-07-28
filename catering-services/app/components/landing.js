@@ -22,7 +22,6 @@ function Landing() {
           className="w-full h-[70vh] object-cover "
         />
         <div className="absolute w-[98%] sm:w-[90%] md:w-[80%] h-[80%] sm:h-[70%] bg-amber-800/80 rounded-3xl flex flex-col md:flex-row justify-center items-center p-2 md:p-8 lg:p-12 xl:p-16">
-          {/* Left: Headline and Input */}
           <div className="flex-1 flex flex-col gap-8 md:gap-12 lg:gap-16 justify-center w-full md:w-1/2 items-center md:items-start">
             <div className="text-center md:text-left">
               <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
@@ -60,7 +59,6 @@ function Landing() {
               </button>
             </div>
           </div>
-          {/* Right: Info */}
           <div className="flex-1 h-full flex flex-col justify-center items-center md:items-start mt-6 md:mt-0 w-full md:w-1/2 px-2 md:px-6 lg:px-10">
             <div className="bg-black/30 rounded-xl px-4 py-6 md:py-8 w-full max-w-md md:max-w-none">
               <p className="text-white font-bold text-base sm:text-lg md:text-2xl leading-snug mb-2 md:mb-4 text-center md:text-left">Over 100,000 restaurants</p>
