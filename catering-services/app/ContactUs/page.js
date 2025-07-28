@@ -31,32 +31,31 @@ function Contact() {
   };
 
   return (
-    <div className="h-[100vh] grid  grid-cols-[60%_40%] p-4 bg-gradient-to-r from-yellow-100 via-purple-100">
-      <div className="h-[70%]  p-24 grid gap-6">
-        <div className="font-bold text-5xl ">Customer Support</div>
-        <div className="text-gray-700 font-bold text-xl font-sans">
-          {' '}
+    <div className="min-h-screen grid grid-cols-1 md:grid-cols-[60%_40%] p-2 sm:p-4 bg-gradient-to-r from-yellow-100 via-purple-100">
+      <div className="h-auto md:h-[70%] p-4 sm:p-8 md:p-24 grid gap-4 sm:gap-6 order-2 md:order-1">
+        <div className="font-bold text-3xl sm:text-4xl md:text-5xl">Customer Support</div>
+        <div className="text-gray-700 font-bold text-lg sm:text-xl font-sans">
           Email: <span className="text-orange-500">support@BiteBuzz.com</span>
         </div>
         <div>
-          <div className="text-2xl font-extrabold ">Find Us On</div>
+          <div className="text-xl sm:text-2xl font-extrabold">Find Us On</div>
           <div>icons icons icons</div>
         </div>
-        <div className="text-2xl font-extrabold">Corporate Office</div>
+        <div className="text-xl sm:text-2xl font-extrabold">Corporate Office</div>
         <div className="font-medium text-gray-600">
           BiteBuzz Headquarters 7th Floor, Zenith Square Koramangala 1st Block,
           Bengaluru – 560034 Karnataka, India
         </div>
       </div>
-      <div className="h-[90%] p-8 flex items-center">
-        <div className="bg-white/40 h-[90%] border-2 border-white w-[80%] grid grid-rows-[5%_80%_15%] rounded-3xl  p-7 ">
-          <div className="text-2xl font-bold  ">Let's Get in Touch</div>
-          <form className="flex flex-col justify-center  gap-6" onSubmit={handleSubmit} noValidate>
+      <div className="h-auto md:h-[90%] p-4 sm:p-8 flex items-center order-1 md:order-2">
+        <div className="bg-white/40 border-2 border-white w-full sm:w-[90%] md:w-[80%] grid grid-rows-[auto_1fr_auto] rounded-3xl p-4 sm:p-7">
+          <div className="text-xl sm:text-2xl font-bold mb-2">Let's Get in Touch</div>
+          <form className="flex flex-col justify-center gap-4 sm:gap-6" onSubmit={handleSubmit} noValidate>
             <div>
               <input
                 type="text"
                 name="name"
-                className="bg-white shadow-lg rounded-sm h-12 pl-[10%] w-full"
+                className="bg-white shadow-lg rounded-sm h-12 pl-4 w-full"
                 placeholder="Enter Name"
                 value={form.name}
                 onChange={handleChange}
@@ -67,7 +66,7 @@ function Contact() {
               <input
                 type="email"
                 name="email"
-                className="bg-white shadow-lg rounded-sm h-12 pl-[10%] w-full"
+                className="bg-white shadow-lg rounded-sm h-12 pl-4 w-full"
                 placeholder="Enter Email"
                 value={form.email}
                 onChange={handleChange}
@@ -77,7 +76,7 @@ function Contact() {
             <div>
               <textarea
                 name="message"
-                className="bg-white shadow-lg rounded-sm h-32 pl-[10%] pt-2 w-full resize-none"
+                className="bg-white shadow-lg rounded-sm h-32 pl-4 pt-2 w-full resize-none"
                 placeholder="Enter Message"
                 value={form.message}
                 onChange={handleChange}
@@ -86,12 +85,12 @@ function Contact() {
             </div>
             <button
               type="submit"
-              className="bg-orange-500 w-[25%] ml-4 mb-3 rounded-xl text-white p-2 flex justify-center items-center"
+              className="bg-orange-500 w-full sm:w-[50%] md:w-[25%] mx-auto mb-3 rounded-xl text-white p-2 flex justify-center items-center"
             >
               Submit
             </button>
           </form>
-          <div className="text-sm text-gray-600">By contacting us you agree to the <span className="text-orange-500">Terms and Conditions</span> and <span className="text-orange-500">Privacy Policy</span></div>
+          <div className="text-xs sm:text-sm text-gray-600 text-center mt-2">By contacting us you agree to the <span className="text-orange-500">Terms and Conditions</span> and <span className="text-orange-500">Privacy Policy</span></div>
         </div>
       </div>
     </div>

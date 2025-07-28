@@ -1,10 +1,10 @@
 export default function About() {
   return (
     <>
-      <div className="flex justify-center ">
-        <div className=" grid grid-cols-2  h-[60vh] gap-1 mt-20 w-[90vw]">
-          <div className="border rounded-lg shadow-lg  m-2  h-[80%] bg-white font-light  p-[3%] flex flex-col gap-3">
-            <div className="font-bold text-2xl mb-4"> About Us</div>
+      <div className="flex justify-center w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 h-auto md:h-[60vh] gap-4 mt-10 md:mt-20 w-[96vw] md:w-[90vw]">
+          <div className="border rounded-lg shadow-lg m-2 bg-white font-light p-4 sm:p-6 md:p-[3%] flex flex-col gap-3 h-auto md:h-[80%]">
+            <div className="font-bold text-xl sm:text-2xl mb-4"> About Us</div>
             <div>
               Welcome to <span className="font-bold">BiteBuzz</span> – your
               smart solution for discovering and booking top-rated catering
@@ -26,9 +26,9 @@ export default function About() {
               convenience and quality to your workplace meals.
             </div>
           </div>
-          <div className="  m-2  h-[80%] grid grid-rows-2 gap-4 font-light ">
-            <div className="border rounded-lg shadow-lg  p-[3%] bg-white">
-              <div className="font-bold text-2xl mb-3">Our Mission</div>
+          <div className="m-2 h-auto md:h-[80%] grid grid-rows-2 gap-4 font-light">
+            <div className="border rounded-lg shadow-lg p-4 sm:p-6 md:p-[3%] bg-white">
+              <div className="font-bold text-xl sm:text-2xl mb-3">Our Mission</div>
               <div>
                 Our mission is to revolutionize the way people discover and
                 access catering services. We aim to simplify event planning and
@@ -37,8 +37,8 @@ export default function About() {
                 digital platform.
               </div>
             </div>
-            <div className="border rounded-lg shadow-lg  p-[3%] bg-white font-light ">
-              <div className="font-bold text-2xl mb-3">Our Story</div>
+            <div className="border rounded-lg shadow-lg p-4 sm:p-6 md:p-[3%] bg-white font-light">
+              <div className="font-bold text-xl sm:text-2xl mb-3">Our Story</div>
               <div>
                 BiteBuzz was born out of a simple idea: finding great food
                 should be easier. Whether it’s a family gathering, a big
@@ -51,34 +51,34 @@ export default function About() {
         </div>
       </div>
       <br />
-      <div className="p-[7%] bg-[#151920] text-gray-200">
-        <div className="font-extrabold text-3xl text-yellow-400 mb-10">
-          Why BiteBuzz ?{" "}
+      <div className="px-2 sm:px-6 md:px-[7%] py-8 bg-[#151920] text-gray-200">
+        <div className="font-extrabold text-2xl sm:text-3xl md:text-4xl text-yellow-400 mb-6 md:mb-10">
+          Why BiteBuzz ?
         </div>
-        <div className="grid grid-cols-2 gap-25 text-lg font-mono">
-
-          <div className="font-mono flex flex-col gap-4">
-          <div> 
-            With so many catering options out there, choosing the right one can
-            feel overwhelming. That’s where BiteBuzz comes in — your one-stop
-            platform for all things catering.
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 text-base sm:text-lg font-mono">
+          <div className="flex flex-col gap-4">
+            <div>
+              With so many catering options out there, choosing the right one can
+              feel overwhelming. That’s where BiteBuzz comes in — your one-stop
+              platform for all things catering.
+            </div>
+            <div>
+              BiteBuzz is here to make catering simple, smart, and satisfying — for individuals, teams, and everyone in between.
+            </div>
           </div>
-            <div>BiteBuzz is here to make catering simple, smart, and satisfying — for individuals, teams, and everyone in between.</div>
-          </div>
-          
           <div>
-            <div className="text-orange-400 font-bold text-2xl  ">
+            <div className="text-orange-400 font-bold text-xl sm:text-2xl mb-2">
               Here's why people choose BiteBuzz:
             </div>
-            <ul className="p-4 list-disc list-inside flex flex-col gap-7 " >
-              <li >
-                <span className="font-bold text-lg">Local & Trusted Caterers:</span> Easily find verified catering services near you, from premium to pocket-friendly, all rated and reviewed by real customers.
+            <ul className="p-4 list-disc list-inside flex flex-col gap-4 sm:gap-7">
+              <li>
+                <span className="font-bold text-base sm:text-lg">Local & Trusted Caterers:</span> Easily find verified catering services near you, from premium to pocket-friendly, all rated and reviewed by real customers.
               </li>
               <li>
-                <span className="font-bold text-lg">Seamless Booking Experience:</span> Compare menus, get instant quotes, and book your caterer in just a few clicks — no more endless phone calls or guesswork.
+                <span className="font-bold text-base sm:text-lg">Seamless Booking Experience:</span> Compare menus, get instant quotes, and book your caterer in just a few clicks — no more endless phone calls or guesswork.
               </li>
               <li>
-                <span className="font-bold text-lg">Flexible Employee Meal Plans:</span> Keep your team fueled with customized, reliable, and budget-friendly meal plans designed for workplaces of all sizes.
+                <span className="font-bold text-base sm:text-lg">Flexible Employee Meal Plans:</span> Keep your team fueled with customized, reliable, and budget-friendly meal plans designed for workplaces of all sizes.
               </li>
             </ul>
           </div>

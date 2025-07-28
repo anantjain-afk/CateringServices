@@ -52,13 +52,27 @@ function Testimonial() {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
   
 
   return (
     <>
-        <div className="px-10 py-10 bg-emerald-500">
-          <h2 className="text-6xl font-bold text-center text-gray-800 mb-8">
+        <div className="px-2 sm:px-6 py-8 sm:py-10 bg-emerald-500">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-center text-gray-800 mb-6 sm:mb-8">
             See why customers love us
           </h2>
           {hasMounted && (
@@ -67,12 +81,12 @@ function Testimonial() {
               {testimonials.map((t, index) => (
                 <div
                   key={index}
-                  className="p-5 bg-gray-100 rounded shadow-md  h-60 mx-4"
+                  className="p-3 sm:p-5 bg-gray-100 rounded shadow-md h-60 mx-2 sm:mx-4"
                 >
                   <div className="text-orange-400 mb-2">★★★★★</div>
-                  <div className="font-semibold text-lg mb-2">{t.title}</div>
-                  <div className="text-gray-600 text-sm">{t.content}</div>
-                  <div className="mt-2 text-gray-800 font-semibold text-sm">
+                  <div className="font-semibold text-base sm:text-lg mb-2">{t.title}</div>
+                  <div className="text-gray-600 text-xs sm:text-sm">{t.content}</div>
+                  <div className="mt-2 text-gray-800 font-semibold text-xs sm:text-sm">
                     {t.author}
                   </div>
                 </div>

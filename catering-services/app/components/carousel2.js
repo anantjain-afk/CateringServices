@@ -48,28 +48,28 @@ export default function CarouselItems() {
 
   const scrollLeft = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -384, behavior: 'smooth' });
+      carouselRef.current.scrollBy({ left: -320, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 384, behavior: 'smooth' });
+      carouselRef.current.scrollBy({ left: 320, behavior: 'smooth' });
     }
   };
 
   return (
     <div className="w-full bg-white text-black py-8">
-      <div className="relative px-8">
+      <div className="relative px-2 sm:px-4 md:px-8">
         <button
           onClick={scrollLeft}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-yellow-400 text-[#333333] p-2 rounded-full hover:bg-[#A8B5A2] transition-colors duration-200"
+          className="absolute left-2 sm:left-0 top-1/2 transform -translate-y-1/2 bg-yellow-400 text-[#333333] p-2 rounded-full hover:bg-[#A8B5A2] transition-colors duration-200 z-10"
         >
           <FaChevronLeft className="w-6 h-6" />
         </button>
         <button
           onClick={scrollRight}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-yellow-400 text-[#333333] p-2 rounded-full hover:bg-[#A8B5A2] transition-colors duration-200"
+          className="absolute right-2 sm:right-0 top-1/2 transform -translate-y-1/2 bg-yellow-400 text-[#333333] p-2 rounded-full hover:bg-[#A8B5A2] transition-colors duration-200 z-10"
         >
           <FaChevronRight className="w-6 h-6" />
         </button>
@@ -81,16 +81,16 @@ export default function CarouselItems() {
           {carouselItems.map((item, index) => (
             <div
               key={index}
-              className="flex-none w-96 snap-center bg-[#F9FAFB] text-[#333333] rounded-lg shadow-md overflow-hidden"
+              className="flex-none w-72 sm:w-80 md:w-96 snap-center bg-[#F9FAFB] text-[#333333] rounded-lg shadow-md overflow-hidden"
             >
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-64 object-cover"
+                className="w-full h-48 sm:h-56 md:h-64 object-cover"
               />
-              <div className="p-6 space-y-3">
-                <h2 className="text-2xl font-semibold">{item.title}</h2>
-                <p className="text-base">{item.description}</p>
+              <div className="p-4 sm:p-6 space-y-2 sm:space-y-3">
+                <h2 className="text-xl sm:text-2xl font-semibold">{item.title}</h2>
+                <p className="text-sm sm:text-base">{item.description}</p>
                 <Link href='/Services'>
                   <button className="px-4 py-2 bg-yellow-400 text-[#333333] rounded-lg hover:bg-[#A8B5A2] transition-colors duration-200">
                     Learn More

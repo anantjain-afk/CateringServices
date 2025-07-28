@@ -38,33 +38,28 @@ export default function RootLayout({ children }) {
           </main>
 
           <footer >
-            <div className=" bg-cyan-900 text-white w-full h-60 flex gap-9 ">
-
-            <div className="font-light text-2xl p-9 w-[60%]">BiteBuzz is your go-to partner for unforgettable catering experiences—
-              <span className="font-bold text-amber-500">flavorful, fresh, and fuss-free.</span></div>
-
-              <div className="flex flex-col py-9 ">
-                <p className="font-bold ">Quick Links</p>
-                <Link href='/'   className="hover:text-orange-600">Home</Link>
-                <Link href='/Services'  className="hover:text-orange-600">Services</Link>
-                <Link href='/About' className="hover:text-orange-600">About</Link>
-                <Link href = '/ContactUs' className="hover:text-orange-600">Contact Us</Link>
+            <div className="bg-cyan-900 text-white w-full flex flex-col md:flex-row gap-6 md:gap-9 px-4 md:px-12 py-8 md:py-0 items-center md:items-start">
+              <div className="font-light text-xl sm:text-2xl py-4 md:py-9 w-full md:w-[40%] text-center md:text-left">
+                BiteBuzz is your go-to partner for unforgettable catering experiences—
+                <span className="font-bold text-amber-500">flavorful, fresh, and fuss-free.</span>
               </div>
-              <div className="flex flex-col py-9 ">
-                <p className="font-bold">Contact Info</p>
+              <div className="flex flex-col py-4 md:py-9 w-full md:w-[15%] text-center md:text-left">
+                <p className="font-bold mb-2">Quick Links</p>
+                <Link href='/' className="hover:text-orange-600">Home</Link>
+                <Link href='/Services' className="hover:text-orange-600">Services</Link>
+                <Link href='/About' className="hover:text-orange-600">About</Link>
+                <Link href='/ContactUs' className="hover:text-orange-600">Contact Us</Link>
+              </div>
+              <div className="flex flex-col py-4 md:py-9 w-full md:w-[25%] text-center md:text-left">
+                <p className="font-bold mb-2">Contact Info</p>
                 <p>📍 Location: Sonepat, Haryana</p>
                 <p>📞 Phone: +91-XXXXXXXXXX</p>
                 <p>📧 Email: contact@bitebuzz.com</p>
               </div>
-              <div className="flex flex-col py-9 ">
-                <p className="font-bold">Follow Us</p>
+              <div className="flex flex-col py-4 md:py-9 w-full md:w-[15%] text-center md:text-left">
+                <p className="font-bold mb-2">Follow Us</p>
                 <p>Instagram</p>
               </div>
-
-
-
-            
-                
             </div>
           </footer>
         </div>
